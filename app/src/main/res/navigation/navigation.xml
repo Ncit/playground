@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.playground.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_mainNavigation"
+            app:destination="@id/mainNavigation" />
+        <action
+            android:id="@+id/action_loginFragment_to_onboardingNavigation"
+            app:destination="@id/onboardingNavigation" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/onboardingNavigation"
+        app:startDestination="@id/onboarding1Fragment">
+
+        <fragment
+            android:id="@+id/onboarding1Fragment"
+            android:name="com.example.playground.Onboarding1Fragment"
+            android:label="onboarding1_fragment"
+            tools:layout="@layout/onboarding1_fragment" >
+            <action
+                android:id="@+id/action_onboarding1Fragment_to_finishFragment"
+                app:destination="@id/finishFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/finishFragment"
+            android:name="com.example.playground.FinishFragment"
+            android:label="finish_fragment"
+            tools:layout="@layout/finish_fragment" />
+    </navigation>
+
+    <navigation
+        android:id="@+id/mainNavigation"
+        app:startDestination="@id/mainFragment">
+        <fragment
+            android:id="@+id/mainFragment"
+            android:name="com.example.playground.MainFragment"
+            android:label="main_fragment"
+            tools:layout="@layout/main_fragment" />
+    </navigation>
+
+</navigation>
